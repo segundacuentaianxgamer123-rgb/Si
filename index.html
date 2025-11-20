@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aplicación de los Límites del Cálculo Diferencial en una Inversión Financiera</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Aplicación de los Límites del Cálculo Diferencial en una Inversión Financiera</h1>
+      <p><strong>Nombre:</strong> Yuliana Rojo Álvarez, Ocampo Olivares Jonathan Davis</p>
+      <p><strong>Materia:</strong> Cálculo Diferencial</p>
+      <p><strong>Profesor:</strong> RAFAEL TOLEDANO ALATOMA</p>
+      <img src="imagen.png" alt="Gráfica económica" class="imagen">
+    </header>
+
+    <section class="formulario">
+      <h2>Simulador de Portafolio de Inversión</h2>
+      <form id="inversionForm">
+        <input type="text" id="inversionista" placeholder="Nombre del inversionista" required>
+        <input type="text" id="empresa" placeholder="Empresa" required>
+        <input type="number" id="dinero" placeholder="Dinero ingresado" required>
+        <input type="number" id="capital" placeholder="Capital inicial" required>
+        <input type="number" id="tiempo" placeholder="Meses (t)" required>
+        <button type="submit">Calcular</button>
+      </form>
+    </section>
+
+    <section class="grafica">
+      <h2>Resultados de la Inversión</h2>
+      <canvas id="grafico"></canvas>
+    </section>
+
+    <section class="resultados">
+      <h2>Datos</h2>
+      <table id="tablaResultados">
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Dinero ingresado</th>
+            <th>Capital inicial</th>
+            <th>Meses</th>
+            <th>Rendimiento</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="conclusiones">
+      <h2>Conclusiones</h2>
+      <div id="listaConclusiones"></div>
+    </section>
+
+    <section class="teoria-final">
+      <h2>Aplicación de los Límites en Inversiones</h2>
+      <p>En cálculo diferencial, los límites permiten conocer hacia qué valor se aproxima una función cuando una variable crece indefinidamente. En el caso de las inversiones, esto se traduce en entender cuál es la ganancia máxima que puede alcanzarse con el tiempo.</p>
+
+      <p><strong>Problema cotidiano:</strong> Una persona decide invertir en un fondo financiero que genera rendimientos cada mes, pero cada vez menores porque el mercado se estabiliza.</p>
+
+      <p>El rendimiento total de su inversión puede representarse con la función de saturación proporcional al capital:</p>
+      <p><code>G(t) = I · r<sub>max</sub> · (1 - e<sup>-k·t</sup>)</code></p>
+
+      <h3>Cálculo del límite</h3>
+      <p>Cuando <code>t → ∞</code>, el término <code>e<sup>-k·t</sup></code> tiende a 0, por lo que:</p>
+      <p><code>lim (t → ∞) G(t) = I · r<sub>max</sub></code></p>
+      <p>✅ Resultado: El límite depende de la inversión total <code>I</code> y del porcentaje máximo de ganancia <code>r<sub>max</sub></code>. Esto evita incoherencias y refleja que a mayor inversión, mayor posible ganancia.</p>
+
+      <h3>Interpretación</h3>
+      <p>El rendimiento se acerca a un tope máximo proporcional a lo invertido. Al inicio crece rápido, pero después se estabiliza. Esto refleja cómo en la vida real las inversiones dejan de crecer indefinidamente.</p>
+
+      <h3>¿Cuándo sí es rentable invertir?</h3>
+      <ul>
+        <li>Cuando el rendimiento calculado <code>G(t)</code> es mayor que la inversión total <code>I</code>.</li>
+        <li>Cuando el tiempo de inversión <code>t</code> es suficiente para acercarse al límite (ej. varios meses).</li>
+        <li>Cuando el porcentaje máximo de ganancia <code>r<sub>max</sub></code> es lo bastante alto para superar lo invertido.</li>
+      </ul>
+
+      <p>👉 En conclusión: conviene invertir si el modelo muestra que la ganancia proyectada supera lo que aportaste, y si los parámetros del mercado permiten que el límite de rendimiento sea mayor que tu inversión inicial.</p>
+    </section>
+  </div>
+</body>
+</html>
